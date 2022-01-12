@@ -62,28 +62,26 @@ public extension RCTBaseTextInputView {
                 
                 let base64 = image?.base64EncodedString(options: Data.Base64EncodingOptions.init(rawValue: 0))
                 
-                let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+                let paths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
                 
                 let uuid = UUID()
                 let uniqueFileName = uuid.uuidString
                 let path = String(format: "%@/%@.%@", paths[0], uniqueFileName, fileExtension!)
                 
                 do{
-                    try image?.write(to: URL(fileURLWithPath: path))
+                    try image?.write(to: URL(fileURLWithPath: path), options: [.atomic, .noFileProtection])
                 } catch {
                     print(error)
+                    return
                 }
                 
                 NSLog("%@", path)
                 
-               self.onImageChange?([
+                self.onImageChange?([
                     "data": base64!,
                     "uri": path,
                     "mime": mimeType!,
                                   ])
-                
-                
-                
             }
         } else {
             super.paste(sender)
