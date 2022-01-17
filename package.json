@@ -1,16 +1,17 @@
 {
-  "name": "react-native-image-keyboard",
+  "name": "@duell10111/react-native-image-keyboard",
   "title": "React Native Image Keyboard",
-  "version": "2.0.0",
+  "version": "2.1.1",
   "description": "Enables clipboard image pasting and GIFs from TextInput.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gustash/react-native-image-keyboard.git",
-    "baseUrl": "https://github.com/Gustash/react-native-image-keyboard"
+    "url": "git+https://github.com/Duell10111/react-native-image-keyboard",
+    "baseUrl": "https://github.com/Duell10111/react-native-image-keyboard"
   },
   "keywords": [
     "react-native",
@@ -24,8 +25,8 @@
     "media"
   ],
   "author": {
-    "name": "Gustavo Parreira",
-    "email": "gustavotcparreira@gmail.com"
+    "name": "Duell10111",
+    "email": "duell10111@t-online.de"
   },
   "license": "GPLv3",
   "licenseFilename": "LICENSE",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "react": "^16.9.0",
-    "react-native": "^0.61.5"
+    "react-native": "^0.61.5",
+    "@types/react-native": "0.61.23"
   }
 }

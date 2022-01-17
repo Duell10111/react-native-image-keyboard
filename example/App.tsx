@@ -7,6 +7,7 @@
  */
 
 import React, {useState, useCallback} from 'react';
+import { KeyboardAvoidingView, TextInputProps } from 'react-native';
 import {
   SafeAreaView,
   StyleSheet,
@@ -18,19 +19,24 @@ import {
   Image,
 } from 'react-native';
 
+const t : TextInputProps = {
+  onImageChange: (event) => {event.uri}
+}
+
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
-  const [selectedMediaUri, setSelectedMediaUri] = useState<?String>(null);
+const App = () => {
+  const [selectedMediaUri, setSelectedMediaUri] = useState<String | null>(null);
 
   const _onImageChange = useCallback(({nativeEvent}) => {
-    const {uri} = nativeEvent;
+    const {uri, data} = nativeEvent;
+    console.log(uri)
 
     setSelectedMediaUri(uri);
   }, []);
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior={Platform.OS == 'ios' ? 'padding' : undefined}>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.container}>
         <ScrollView
@@ -53,7 +59,7 @@ const App: () => React$Node = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
