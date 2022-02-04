@@ -1,5 +1,14 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":dependencyDashboard", 
+    ":rebaseStalePrs",
+    ":enableVulnerabilityAlertsWithLabel('security')",
+    "group:allNonMajor",
+    "group:test",
+    "group:linters",
+    "group:reactMonorepo",
+    "group:react-navigationMonorepo",
+    "group:babelMonorepo"
   ]
 }
