@@ -96,7 +96,7 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
     implementation 'commons-io:commons-io:2.11.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.4.10"
 }
 
 def configureReactNativePom(def pom) {
